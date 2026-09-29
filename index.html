@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <title>Desafio Engenharia de Software — Baita Feira</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand-row" aria-label="Realização e parceiros">
+      <div class="logo logo-es"><img src="assets/logo-es.png" alt="Logo da Engenharia de Software"><span>ENGENHARIA<br><b>DE SOFTWARE</b></span></div>
+      <div class="logo unipampa"><img src="assets/logo-unipampa.png" alt="Logo da Unipampa"></div>
+      <div class="logo baita-logo"><img src="assets/logo-baita.png" alt="Logo da Baita Feira de Ciências"></div>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="screen active" id="home">
+      <div class="hero-card">
+        <div class="eyebrow">BAITA FEIRA • UNIPAMPA ALEGRETE</div>
+        <h1>Você consegue pensar como uma pessoa de <span>Engenharia de Software?</span></h1>
+        <p class="lead">Primeiro, encare <b>5 Caças ao Bug</b>. Depois, responda <b>10 perguntas</b> para descobrir qual área de software combina mais com você.</p>
+        <div class="hero-badges"><span>🐛 5 Caças ao Bug</span><span>🧭 10 perguntas de perfil</span><span>💻 10 áreas de software</span></div>
+        <button class="primary big" data-go="bug1">COMEÇAR DESAFIO <b>→</b></button>
+        <p class="micro">Leva cerca de 5 minutos.</p>
+      </div>
+      <aside class="side-card">
+        <div class="terminal"><div class="term-head"><i></i><i></i><i></i></div><code><span class="dim">// Engenharia de Software é...</span><br><span class="pink">const</span> futuro = {<br>&nbsp;&nbsp;criatividade: <span class="green">true</span>,<br>&nbsp;&nbsp;tecnologia: <span class="green">true</span>,<br>&nbsp;&nbsp;pessoas: <span class="green">true</span>,<br>&nbsp;&nbsp;impacto: <span class="yellow">"real"</span><br>};<br><br><span class="blue">console</span>.log(<span class="yellow">"Bora construir?"</span>);</code></div>
+        <div class="stat"><strong>9</strong><span>semestres</span></div><div class="stat"><strong>noturno</strong><span>Campus Alegrete</span></div>
+      </aside>
+    </section>
+
+    <section class="screen bug-screen" id="bug1">
+      <div class="section-heading"><span>CAÇA AO BUG 1/5</span><h2>🐛 Segurança no pagamento</h2><p>Qual problema é o mais grave nesta tela?</p></div>
+      <div class="mockup checkout"><div class="mock-head"><b>Loja PampaTech</b><span>Finalizar compra</span></div><div class="cart-item"><div class="phone-icon">▯</div><div><b>Fone Bluetooth</b><small>Quantidade: 1</small></div><strong>R$ 189,90</strong></div><label>Nome no cartão<input value="João da Silva" readonly></label><label>Número do cartão<input value="**** **** **** 4821" readonly></label><div class="cvv-row"><label>CVV<input id="cvv" value="123" readonly></label><label>Parcelas<select disabled><option>2x de R$ 94,95</option></select></label></div><div class="total"><span>Total</span><strong>R$ 189,90</strong></div><button class="fake-pay">Pagar agora</button></div>
+      <div class="options" data-question="bug1"><button>A) O botão deveria ser verde</button><button data-correct="true">B) O CVV está exposto na tela</button><button>C) O nome do produto é curto</button></div><div class="feedback" id="feedback-bug1"></div>
+    </section>
+
+    <section class="screen bug-screen" id="bug2">
+      <div class="section-heading"><span>CAÇA AO BUG 2/5</span><h2>🔐 Login suspeito</h2><p>O sistema permite criar uma senha. Qual regra está faltando?</p></div>
+      <div class="mockup"><div class="mock-head"><b>Crie sua conta</b><span>Cadastro</span></div><label>E-mail<input value="visitante@email.com" readonly></label><label>Senha<input value="123" readonly></label><p class="mock-note">✓ Cadastro realizado com sucesso!</p></div>
+      <div class="options" data-question="bug2"><button>A) O campo de e-mail deveria ser azul</button><button data-correct="true">B) O sistema aceitou uma senha extremamente fraca</button><button>C) O botão deveria ter um ícone</button></div><div class="feedback" id="feedback-bug2"></div>
+    </section>
+
+    <section class="screen bug-screen" id="bug3">
+      <div class="section-heading"><span>CAÇA AO BUG 3/5</span><h2>🛒 Regra de negócio</h2><p>Observe o carrinho. O que não deveria ser possível?</p></div>
+      <div class="mockup"><div class="mock-head"><b>Carrinho</b><span>3 itens</span></div><div class="bug-row"><span>Ingresso para oficina</span><strong>Qtd: -2</strong></div><div class="bug-row"><span>Valor unitário</span><strong>R$ 20,00</strong></div><div class="total"><span>Total</span><strong>- R$ 40,00</strong></div></div>
+      <div class="options" data-question="bug3"><button data-correct="true">A) O sistema aceita quantidade negativa</button><button>B) O preço está em reais</button><button>C) O carrinho tem título</button></div><div class="feedback" id="feedback-bug3"></div>
+    </section>
+
+    <section class="screen bug-screen" id="bug4">
+      <div class="section-heading"><span>CAÇA AO BUG 4/5</span><h2>♿ Acessibilidade</h2><p>Qual detalhe pode impedir uma pessoa de usar esta tela?</p></div>
+      <div class="mockup access-mock"><div class="mock-head"><b>Formulário de inscrição</b><span>Acessibilidade</span></div><div class="fake-field"><span class="placeholder">Digite aqui...</span></div><div class="two-buttons"><button>Enviar</button><button>Cancelar</button></div><p class="mock-note muted-note">Os campos aparecem apenas com placeholder, sem rótulo visível.</p></div>
+      <div class="options" data-question="bug4"><button>A) Há dois botões</button><button data-correct="true">B) O campo não tem rótulo, dificultando compreensão e leitores de tela</button><button>C) O formulário está centralizado</button></div><div class="feedback" id="feedback-bug4"></div>
+    </section>
+
+    <section class="screen bug-screen" id="bug5">
+      <div class="section-heading"><span>CAÇA AO BUG 5/5</span><h2>💥 Confirmação perigosa</h2><p>Você clicou em “Excluir conta”. O que está errado?</p></div>
+      <div class="mockup danger-mock"><div class="mock-head"><b>Configurações</b><span>Conta</span></div><p>Excluir sua conta apagará todos os dados.</p><button class="danger-button">EXCLUIR CONTA AGORA</button><p class="mock-note">Ao clicar, a conta é apagada imediatamente.</p></div>
+      <div class="options" data-question="bug5"><button>A) O botão está vermelho</button><button>B) A palavra “conta” aparece duas vezes</button><button data-correct="true">C) Uma ação irreversível deveria pedir confirmação</button></div><div class="feedback" id="feedback-bug5"></div>
+    </section>
+
+    <section class="screen" id="profile">
+      <div class="section-heading"><span>QUIZ DE PERFIL • 10 PERGUNTAS</span><h2>🧭 Qual área de software tem mais a sua cara?</h2><p>Escolha a alternativa que mais combina com você. Não existe resposta certa.</p></div>
+      <div class="quiz-progress"><div id="quiz-progress-bar"></div></div>
+      <div id="quiz-wrap">
+        <div class="quiz-step active" data-step="0"><h3>1. O que mais te chama atenção em um aplicativo?</h3><div class="profile-options"><button data-area="frontend">🎨 A aparência e a facilidade de usar</button><button data-area="backend">⚙️ O que acontece por trás da tela</button><button data-area="security">🔐 Se os dados estão protegidos</button><button data-area="data">🗄️ Como as informações são organizadas</button></div></div>
+        <div class="quiz-step" data-step="1"><h3>2. Qual atividade parece mais divertida?</h3><div class="profile-options"><button data-area="ai">🤖 Ensinar uma máquina a reconhecer padrões</button><button data-area="quality">🧪 Tentar quebrar o sistema antes do usuário</button><button data-area="mobile">📱 Criar um app para celular</button><button data-area="devops">☁️ Colocar um sistema no ar e mantê-lo funcionando</button></div></div>
+        <div class="quiz-step" data-step="2"><h3>3. Em um trabalho em grupo, você costuma...</h3><div class="profile-options"><button data-area="management">📋 Organizar tarefas e prioridades</button><button data-area="architecture">🏗️ Pensar em como todas as partes vão se conectar</button><button data-area="frontend">🖌️ Cuidar da apresentação e experiência</button><button data-area="backend">🧩 Resolver a lógica mais complexa</button></div></div>
+        <div class="quiz-step" data-step="3"><h3>4. Qual problema você teria mais vontade de investigar?</h3><div class="profile-options"><button data-area="security">🕵️ Como alguém conseguiu invadir um sistema</button><button data-area="quality">🐛 Por que uma funcionalidade parou de funcionar</button><button data-area="data">🔎 Por que os dados estão duplicados ou inconsistentes</button><button data-area="devops">🚨 Por que o site caiu em produção</button></div></div>
+        <div class="quiz-step" data-step="4"><h3>5. Se você pudesse criar algo hoje, escolheria...</h3><div class="profile-options"><button data-area="mobile">📲 Um aplicativo para resolver um problema do dia a dia</button><button data-area="ai">🧠 Um assistente inteligente</button><button data-area="frontend">🌐 Um site muito bonito e intuitivo</button><button data-area="backend">🔌 Uma API que conecta vários serviços</button></div></div>
+        <div class="quiz-step" data-step="5"><h3>6. O que mais te satisfaz?</h3><div class="profile-options"><button data-area="quality">✅ Ver tudo funcionando sem erros</button><button data-area="architecture">🧱 Ver um sistema grande bem organizado</button><button data-area="management">🚀 Ver uma equipe entregar uma ideia real</button><button data-area="data">📊 Transformar informação bagunçada em algo útil</button></div></div>
+        <div class="quiz-step" data-step="6"><h3>7. Qual frase combina mais com você?</h3><div class="profile-options"><button data-area="security">🛡️ “Como isso poderia dar errado?”</button><button data-area="devops">⚡ “Como automatizar isso?”</button><button data-area="architecture">🧠 “Como projetar isso para crescer?”</button><button data-area="mobile">📱 “Como isso funcionaria no celular?”</button></div></div>
+        <div class="quiz-step" data-step="7"><h3>8. Em um jogo de investigação, você seria...</h3><div class="profile-options"><button data-area="ai">🧬 Quem encontra padrões escondidos</button><button data-area="security">🔍 Quem procura pistas de invasão</button><button data-area="quality">🧪 Quem testa todas as possibilidades</button><button data-area="management">🗺️ Quem coordena a estratégia do time</button></div></div>
+        <div class="quiz-step" data-step="8"><h3>9. Qual dessas matérias parece mais interessante?</h3><div class="profile-options"><button data-area="data">🗄️ Banco de Dados</button><button data-area="architecture">🏗️ Arquitetura de Software</button><button data-area="frontend">🎨 Interfaces e Experiência do Usuário</button><button data-area="devops">☁️ Sistemas distribuídos, nuvem e automação</button></div></div>
+        <div class="quiz-step" data-step="9"><h3>10. Qual impacto você gostaria de causar?</h3><div class="profile-options"><button data-area="ai">🤖 Criar tecnologia que aprende e auxilia pessoas</button><button data-area="mobile">🌎 Levar soluções para o bolso de milhares de usuários</button><button data-area="management">🤝 Transformar necessidades em produtos úteis</button><button data-area="backend">⚙️ Fazer sistemas robustos funcionarem por trás de tudo</button></div></div>
+      </div>
+    </section>
+
+    <section class="screen" id="result">
+      <div class="result-card"><div class="confetti">✦ &nbsp; ✧ &nbsp; ✦</div><p class="eyebrow">DESAFIO CONCLUÍDO</p><h2>Você pensou como uma pessoa de Engenharia de Software.</h2><div class="score-ring"><strong id="score">0/5</strong><span>bugs encontrados</span></div><div class="profile-result" id="profile-result"></div><div class="secondary-result" id="secondary-result"></div><div class="lesson"><h3>O que você acabou de fazer?</h3><div><span>🐛</span><p><b>Teste e qualidade</b><small>Encontrou problemas reais em interfaces e regras.</small></p></div><div><span>🔐</span><p><b>Segurança e acessibilidade</b><small>Pensou em riscos, proteção e inclusão.</small></p></div><div><span>🧭</span><p><b>Explorou sua afinidade</b><small>Descobriu caminhos possíveis dentro da área.</small></p></div></div><button class="primary" data-go="course">VER AS 10 ÁREAS DE SOFTWARE →</button><button class="ghost" id="restart">Recomeçar</button></div>
+    </section>
+
+    <section class="screen" id="course">
+      <div class="course-card"><p class="eyebrow">ENGENHARIA DE SOFTWARE • UNIPAMPA</p><h2>10 áreas que você pode seguir em software</h2><p class="lead">Programar é só uma parte. Engenharia de Software envolve criar, testar, proteger, manter e evoluir sistemas.</p>
+        <div class="areas-explained">
+          <article><b>🎨 Front-end & UX</b><p>Constrói interfaces e experiências fáceis, bonitas e acessíveis para quem usa o sistema.</p><small>Ex.: sites, dashboards, design de interação.</small></article>
+          <article><b>⚙️ Back-end & APIs</b><p>Cuida da lógica, regras de negócio, integrações e serviços que funcionam por trás da interface.</p><small>Ex.: autenticação, pagamentos, APIs.</small></article>
+          <article><b>📱 Desenvolvimento Mobile</b><p>Cria aplicativos para celulares e tablets pensando em desempenho e experiência móvel.</p><small>Ex.: apps Android/iOS e multiplataforma.</small></article>
+          <article><b>🧪 Testes & Qualidade</b><p>Planeja testes, encontra defeitos e ajuda a garantir que o software funcione como deveria.</p><small>Ex.: testes automatizados, QA, validação.</small></article>
+          <article><b>🔐 Segurança de Software</b><p>Previne vulnerabilidades, protege dados e analisa como sistemas podem ser atacados.</p><small>Ex.: segurança de aplicações, análise de riscos.</small></article>
+          <article><b>🤖 IA & Ciência de Dados</b><p>Usa dados e modelos inteligentes para reconhecer padrões, prever e apoiar decisões.</p><small>Ex.: LLMs, recomendação, classificação.</small></article>
+          <article><b>☁️ DevOps & Cloud</b><p>Automatiza entrega, infraestrutura e monitoramento para manter sistemas disponíveis e confiáveis.</p><small>Ex.: Docker, CI/CD, nuvem.</small></article>
+          <article><b>🏗️ Arquitetura de Software</b><p>Define como partes de sistemas grandes se organizam e se comunicam para crescer com qualidade.</p><small>Ex.: microsserviços, padrões e decisões arquiteturais.</small></article>
+          <article><b>📊 Gestão de Produto & Projetos</b><p>Conecta usuários, equipe e objetivos para decidir o que construir e organizar a entrega.</p><small>Ex.: requisitos, produto, planejamento ágil.</small></article>
+          <article><b>🗄️ Banco de Dados & Engenharia de Dados</b><p>Modela, armazena, organiza e disponibiliza dados de forma correta, rápida e segura.</p><small>Ex.: SQL, pipelines, modelagem de dados.</small></article>
+        </div>
+        <div class="course-bottom"><div class="course-facts"><b>📍 Campus Alegrete</b><b>🌙 Curso noturno</b><b>🎓 Bacharelado</b><b>🗓️ 9 semestres</b></div><div class="qr-box"><img src="assets/qr-curso.png" alt="QR Code para o site do curso"><span>Aponte a câmera<br><b>e conheça o curso</b></span></div></div><button class="ghost" data-go="home">Voltar ao início</button></div>
+    </section>
+  </main>
+
+  <footer><span>Engenharia de Software • UNIPAMPA • Campus Alegrete</span><span>Baita Feira 2026</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
